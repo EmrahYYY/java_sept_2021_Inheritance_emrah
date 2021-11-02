@@ -1,8 +1,10 @@
 package be.intecbrussel.exercises;
 
+import java.util.Scanner;
+
 public class Rectangle {
-    private double length; // default = 0
-    private double width; // default = 0
+    private double length;
+    private double width;
     private int x;
     private int y;
 

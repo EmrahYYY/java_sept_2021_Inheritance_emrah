@@ -7,6 +7,7 @@ public class SquareApp {
         Rectangle r3 = new Rectangle();
 
         Square mySquare = new Square();
+        System.out.println(mySquare instanceof Rectangle);
         System.out.println(mySquare.getArea());
         System.out.println(mySquare.getCircumference());
         System.out.println(mySquare.getLength());
