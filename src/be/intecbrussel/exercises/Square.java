@@ -48,4 +48,11 @@ public class Square extends Rectangle {
     public static int getCount() {
         return count;
     }
+
+    @Override
+    public String toString() {
+        return "Square{} " + super.toString();
+    }
+
+
 }

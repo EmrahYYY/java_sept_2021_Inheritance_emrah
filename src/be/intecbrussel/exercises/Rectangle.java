@@ -1,17 +1,16 @@
 package be.intecbrussel.exercises;
 
+import java.util.Objects;
 import java.util.Scanner;
 
-public class Rectangle {
+public class Rectangle extends Shape {
     private double length;
     private double width;
-    private int x;
-    private int y;
 
     private static int count;
     public static final int ANGLES = 4;
 
-    public Rectangle(){
+    public Rectangle() {
         this(0, 0);
     }
 
@@ -49,14 +48,6 @@ public class Rectangle {
         }
     }
 
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
-
     public double getLength() {
         return length;
     }
@@ -65,27 +56,15 @@ public class Rectangle {
         return width;
     }
 
-    public int getX() {
-        return x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
     public double getArea() {
         double area = length * width;
         return area;
     }
 
-    public double getCircumference() {
+    @Override
+    public double getPerimeter() {
         double circumference = (length * 2) + (width * 2);
         return circumference;
-    }
-
-    public void setPosition(int x, int y) {
-        setX(x);
-        setY(y);
     }
 
     public void grow(int d) {
@@ -95,5 +74,27 @@ public class Rectangle {
 
     public static int getCount() {
         return count;
+    }
+
+    @Override
+    public String toString() {
+        return "Rectangle{" +
+                "length=" + length +
+                ", width=" + width +
+                "} " + super.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Rectangle rectangle = (Rectangle) o;
+        return Double.compare(rectangle.length, length) == 0 && Double.compare(rectangle.width, width) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), length, width);
     }
 }
